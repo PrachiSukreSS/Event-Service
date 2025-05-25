@@ -2,7 +2,7 @@ import DSA from "../Components/DSA";
 import React from "react";
 const AdminDashboard = () => {
   return (
-    <div className="min-h-screen bg-[#040313]">
+    <div className="px-2 min-h-screen bg-[#040313]">
       {/* Header */}
       <header className="bg-[#070620] text-white py-4">
         <h1 className="text-center text-3xl font-bold">Admin Dashboard</h1>

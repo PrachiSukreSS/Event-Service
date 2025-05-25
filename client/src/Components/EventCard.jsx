@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const EventCard = ({ title, date, description, imgSrc }) => {
   return (
-    <div className="bg-black bg-opacity-50 p-4 rounded-xl shadow-lg hover:scale-105 transition-transform cursor-pointer">
+    <div className="bg-[#130229] bg-opacity-50 p-4 rounded-xl shadow-lg hover:scale-105 transition-transform cursor-pointer">
       <img
         src={imgSrc}
         alt={title}

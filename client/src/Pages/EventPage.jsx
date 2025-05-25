@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import EventCard from "../Components/EventCard";
 import EventForm from "../Components/EventForm";
-import { fetchEvents, addEvent } from "../services/eventService"; // ✅
+import { fetchEvents, addEvent } from "../services/eventService";
 
 const EventPage = () => {
   const [events, setEvents] = useState([]);
 
-  // Fetch from MongoDB backend
   useEffect(() => {
     const loadEvents = async () => {
       try {
@@ -21,18 +20,26 @@ const EventPage = () => {
 
   const handleAddEvent = async (newEvent) => {
     try {
-      const added = await addEvent(newEvent); // ✅ Save to backend
-      setEvents((prev) => [added, ...prev]); // ✅ Add to frontend
+      const added = await addEvent(newEvent);
+      setEvents((prev) => [added, ...prev]);
     } catch (error) {
       console.error("Failed to add event:", error);
     }
   };
 
   return (
-    <div className="mt-24 bg-[#040313] min-h-screen text-white">
-      <h1 className="text-center text-3xl font-bold mb-4 mt-10">Our Events</h1>
-      <EventForm onSubmit={handleAddEvent} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+    <div className="mt-24 bg-[#0a0112] min-h-screen text-gray-300 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="max-w-xl mx-auto py-1 ">
+        <h3 className="text-center text-4xl md:text-5xl font-extrabold mb-8 mt-12 tracking-wide">
+          Our Events
+        </h3>
+      </div>
+
+      <div className="max-w-5xl mx-auto mb-12">
+        <EventForm onSubmit={handleAddEvent} />
+      </div>
+
+      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {events.map((event) => (
           <EventCard key={event._id} {...event} />
         ))}
