@@ -30,7 +30,7 @@ const EventPage = () => {
 
   return (
     <div className="mt-24 bg-[#040313] min-h-screen text-white">
-      <h1 className="text-center text-3xl font-bold mb-6">Our Events</h1>
+      <h1 className="text-center text-3xl font-bold mb-4 mt-10">Our Events</h1>
       <EventForm onSubmit={handleAddEvent} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
         {events.map((event) => (
