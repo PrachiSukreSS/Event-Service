@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.font-sora {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+}
+.font-inter {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
