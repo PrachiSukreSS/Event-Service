@@ -3,7 +3,7 @@
 # OR more specific
 client/.env
 server/.env
-
+.env
 # Logs
 logs
 *.log
